@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  MetalMesh
+//  MetalSwift
 //
-//  Created by Riku Takano on 2018/11/15.
+//  Created by Riku Takano on 2018/11/14.
 //  Copyright © 2018 Riku Takano. All rights reserved.
 //
 
