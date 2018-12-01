@@ -1,4 +1,16 @@
-# Xcode related files
+# Mac OS X specific files
+.DS_Store
+.Trash*
+.Spotlight-*
+.hidden
+.hotfiles.btree
+.vol
+.FBCIndex
+.FBCLockFolder
+.CFUserTextEncoding
+.localized
+Icon
 
+# Xcode related files
 *.xcuserstate
 *.xcbkptlist

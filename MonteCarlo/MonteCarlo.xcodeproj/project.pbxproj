@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F733828B21B23D0300B2D44D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F733828A21B23D0300B2D44D /* AppDelegate.swift */; };
+		F733828D21B23D0300B2D44D /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F733828C21B23D0300B2D44D /* MetalView.swift */; };
+		F733828F21B23D0400B2D44D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F733828E21B23D0400B2D44D /* Assets.xcassets */; };
+		F733829221B23D0400B2D44D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F733829021B23D0400B2D44D /* Main.storyboard */; };
+		F733829E21B23D0400B2D44D /* MonteCarloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F733829D21B23D0400B2D44D /* MonteCarloTests.swift */; };
+		F73382A921B23D0400B2D44D /* MonteCarloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73382A821B23D0400B2D44D /* MonteCarloUITests.swift */; };
+		F73382B921B23E5000B2D44D /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73382B821B23E5000B2D44D /* MonteCarlo.swift */; };
+		F73382BB21B23E5800B2D44D /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F73382BA21B23E5800B2D44D /* Shaders.metal */; };
+		F73382BD21B2405700B2D44D /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73382BC21B2405700B2D44D /* Renderer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F733829A21B23D0400B2D44D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F733827F21B23D0300B2D44D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F733828621B23D0300B2D44D;
+			remoteInfo = MonteCarlo;
+		};
+		F73382A521B23D0400B2D44D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F733827F21B23D0300B2D44D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F733828621B23D0300B2D44D;
+			remoteInfo = MonteCarlo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F733828721B23D0300B2D44D /* MonteCarlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonteCarlo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F733828A21B23D0300B2D44D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F733828C21B23D0300B2D44D /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		F733828E21B23D0400B2D44D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F733829121B23D0400B2D44D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F733829321B23D0400B2D44D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F733829421B23D0400B2D44D /* MonteCarlo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonteCarlo.entitlements; sourceTree = "<group>"; };
+		F733829921B23D0400B2D44D /* MonteCarloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonteCarloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F733829D21B23D0400B2D44D /* MonteCarloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarloTests.swift; sourceTree = "<group>"; };
+		F733829F21B23D0400B2D44D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F73382A421B23D0400B2D44D /* MonteCarloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonteCarloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F73382A821B23D0400B2D44D /* MonteCarloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarloUITests.swift; sourceTree = "<group>"; };
+		F73382AA21B23D0400B2D44D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F73382B821B23E5000B2D44D /* MonteCarlo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarlo.swift; sourceTree = "<group>"; };
+		F73382BA21B23E5800B2D44D /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		F73382BC21B2405700B2D44D /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F733828421B23D0300B2D44D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F733829621B23D0400B2D44D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73382A121B23D0400B2D44D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F733827E21B23D0300B2D44D = {
+			isa = PBXGroup;
+			children = (
+				F733828921B23D0300B2D44D /* MonteCarlo */,
+				F733829C21B23D0400B2D44D /* MonteCarloTests */,
+				F73382A721B23D0400B2D44D /* MonteCarloUITests */,
+				F733828821B23D0300B2D44D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F733828821B23D0300B2D44D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F733828721B23D0300B2D44D /* MonteCarlo.app */,
+				F733829921B23D0400B2D44D /* MonteCarloTests.xctest */,
+				F73382A421B23D0400B2D44D /* MonteCarloUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F733828921B23D0300B2D44D /* MonteCarlo */ = {
+			isa = PBXGroup;
+			children = (
+				F733828C21B23D0300B2D44D /* MetalView.swift */,
+				F733828A21B23D0300B2D44D /* AppDelegate.swift */,
+				F73382B821B23E5000B2D44D /* MonteCarlo.swift */,
+				F73382BC21B2405700B2D44D /* Renderer.swift */,
+				F73382BA21B23E5800B2D44D /* Shaders.metal */,
+				F733828E21B23D0400B2D44D /* Assets.xcassets */,
+				F733829021B23D0400B2D44D /* Main.storyboard */,
+				F733829321B23D0400B2D44D /* Info.plist */,
+				F733829421B23D0400B2D44D /* MonteCarlo.entitlements */,
+			);
+			path = MonteCarlo;
+			sourceTree = "<group>";
+		};
+		F733829C21B23D0400B2D44D /* MonteCarloTests */ = {
+			isa = PBXGroup;
+			children = (
+				F733829D21B23D0400B2D44D /* MonteCarloTests.swift */,
+				F733829F21B23D0400B2D44D /* Info.plist */,
+			);
+			path = MonteCarloTests;
+			sourceTree = "<group>";
+		};
+		F73382A721B23D0400B2D44D /* MonteCarloUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F73382A821B23D0400B2D44D /* MonteCarloUITests.swift */,
+				F73382AA21B23D0400B2D44D /* Info.plist */,
+			);
+			path = MonteCarloUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F733828621B23D0300B2D44D /* MonteCarlo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F73382AD21B23D0400B2D44D /* Build configuration list for PBXNativeTarget "MonteCarlo" */;
+			buildPhases = (
+				F733828321B23D0300B2D44D /* Sources */,
+				F733828421B23D0300B2D44D /* Frameworks */,
+				F733828521B23D0300B2D44D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonteCarlo;
+			productName = MonteCarlo;
+			productReference = F733828721B23D0300B2D44D /* MonteCarlo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F733829821B23D0400B2D44D /* MonteCarloTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F73382B021B23D0400B2D44D /* Build configuration list for PBXNativeTarget "MonteCarloTests" */;
+			buildPhases = (
+				F733829521B23D0400B2D44D /* Sources */,
+				F733829621B23D0400B2D44D /* Frameworks */,
+				F733829721B23D0400B2D44D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F733829B21B23D0400B2D44D /* PBXTargetDependency */,
+			);
+			name = MonteCarloTests;
+			productName = MonteCarloTests;
+			productReference = F733829921B23D0400B2D44D /* MonteCarloTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F73382A321B23D0400B2D44D /* MonteCarloUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F73382B321B23D0400B2D44D /* Build configuration list for PBXNativeTarget "MonteCarloUITests" */;
+			buildPhases = (
+				F73382A021B23D0400B2D44D /* Sources */,
+				F73382A121B23D0400B2D44D /* Frameworks */,
+				F73382A221B23D0400B2D44D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F73382A621B23D0400B2D44D /* PBXTargetDependency */,
+			);
+			name = MonteCarloUITests;
+			productName = MonteCarloUITests;
+			productReference = F73382A421B23D0400B2D44D /* MonteCarloUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F733827F21B23D0300B2D44D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Riku Takano";
+				TargetAttributes = {
+					F733828621B23D0300B2D44D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F733829821B23D0400B2D44D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F733828621B23D0300B2D44D;
+					};
+					F73382A321B23D0400B2D44D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F733828621B23D0300B2D44D;
+					};
+				};
+			};
+			buildConfigurationList = F733828221B23D0300B2D44D /* Build configuration list for PBXProject "MonteCarlo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F733827E21B23D0300B2D44D;
+			productRefGroup = F733828821B23D0300B2D44D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F733828621B23D0300B2D44D /* MonteCarlo */,
+				F733829821B23D0400B2D44D /* MonteCarloTests */,
+				F73382A321B23D0400B2D44D /* MonteCarloUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F733828521B23D0300B2D44D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F733828F21B23D0400B2D44D /* Assets.xcassets in Resources */,
+				F733829221B23D0400B2D44D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F733829721B23D0400B2D44D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73382A221B23D0400B2D44D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F733828321B23D0300B2D44D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F73382BB21B23E5800B2D44D /* Shaders.metal in Sources */,
+				F73382B921B23E5000B2D44D /* MonteCarlo.swift in Sources */,
+				F733828D21B23D0300B2D44D /* MetalView.swift in Sources */,
+				F73382BD21B2405700B2D44D /* Renderer.swift in Sources */,
+				F733828B21B23D0300B2D44D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F733829521B23D0400B2D44D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F733829E21B23D0400B2D44D /* MonteCarloTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73382A021B23D0400B2D44D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F73382A921B23D0400B2D44D /* MonteCarloUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F733829B21B23D0400B2D44D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F733828621B23D0300B2D44D /* MonteCarlo */;
+			targetProxy = F733829A21B23D0400B2D44D /* PBXContainerItemProxy */;
+		};
+		F73382A621B23D0400B2D44D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F733828621B23D0300B2D44D /* MonteCarlo */;
+			targetProxy = F73382A521B23D0400B2D44D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F733829021B23D0400B2D44D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F733829121B23D0400B2D44D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F73382AB21B23D0400B2D44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F73382AC21B23D0400B2D44D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F73382AE21B23D0400B2D44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MonteCarlo/MonteCarlo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MonteCarlo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.MonteCarlo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		F73382AF21B23D0400B2D44D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MonteCarlo/MonteCarlo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MonteCarlo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.MonteCarlo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		F73382B121B23D0400B2D44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MonteCarloTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.MonteCarloTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonteCarlo.app/Contents/MacOS/MonteCarlo";
+			};
+			name = Debug;
+		};
+		F73382B221B23D0400B2D44D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MonteCarloTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.MonteCarloTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonteCarlo.app/Contents/MacOS/MonteCarlo";
+			};
+			name = Release;
+		};
+		F73382B421B23D0400B2D44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MonteCarloUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.MonteCarloUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = MonteCarlo;
+			};
+			name = Debug;
+		};
+		F73382B521B23D0400B2D44D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MonteCarloUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.MonteCarloUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = MonteCarlo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F733828221B23D0300B2D44D /* Build configuration list for PBXProject "MonteCarlo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73382AB21B23D0400B2D44D /* Debug */,
+				F73382AC21B23D0400B2D44D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F73382AD21B23D0400B2D44D /* Build configuration list for PBXNativeTarget "MonteCarlo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73382AE21B23D0400B2D44D /* Debug */,
+				F73382AF21B23D0400B2D44D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F73382B021B23D0400B2D44D /* Build configuration list for PBXNativeTarget "MonteCarloTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73382B121B23D0400B2D44D /* Debug */,
+				F73382B221B23D0400B2D44D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F73382B321B23D0400B2D44D /* Build configuration list for PBXNativeTarget "MonteCarloUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73382B421B23D0400B2D44D /* Debug */,
+				F73382B521B23D0400B2D44D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F733827F21B23D0300B2D44D /* Project object */;
+}
