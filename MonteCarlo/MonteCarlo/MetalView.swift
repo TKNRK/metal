@@ -33,7 +33,9 @@ class MetalView: MTKView {
     
     func createComputer(device: MTLDevice){
         computer = MonteCarlo(device: device)
+        delegate = computer
     }
     
 }
+
 
