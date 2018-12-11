@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7A192B621BA26750097F2DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A192B521BA26750097F2DA /* AppDelegate.swift */; };
+		F7A192BA21BA26750097F2DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A192B921BA26750097F2DA /* Assets.xcassets */; };
+		F7A192BD21BA26750097F2DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A192BB21BA26750097F2DA /* Main.storyboard */; };
+		F7A192E221BA26A60097F2DA /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F7A192E121BA26A60097F2DA /* Shaders.metal */; };
+		F7A192E421BA26B00097F2DA /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A192E321BA26B00097F2DA /* MetalView.swift */; };
+		F7A192E621BA26BF0097F2DA /* MonteCarlo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A192E521BA26BF0097F2DA /* MonteCarlo.swift */; };
+		F7A192E821BA26CE0097F2DA /* Mandelbrot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A192E721BA26CE0097F2DA /* Mandelbrot.swift */; };
+		F7A192EA21BA27380097F2DA /* Computer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A192E921BA27380097F2DA /* Computer.swift */; };
+		F7A192EE21BA2FBA0097F2DA /* loki.metal in Sources */ = {isa = PBXBuildFile; fileRef = F7A192ED21BA2FBA0097F2DA /* loki.metal */; };
+		F7A192F021BA2FD50097F2DA /* loki_header.metal in Sources */ = {isa = PBXBuildFile; fileRef = F7A192EF21BA2FD50097F2DA /* loki_header.metal */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7A192C521BA26750097F2DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7A192AA21BA26750097F2DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A192B121BA26750097F2DA;
+			remoteInfo = "2-ComputeShader";
+		};
+		F7A192D021BA26750097F2DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7A192AA21BA26750097F2DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A192B121BA26750097F2DA;
+			remoteInfo = "2-ComputeShader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F7A192B221BA26750097F2DA /* 2-ComputeShader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2-ComputeShader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A192B521BA26750097F2DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7A192B921BA26750097F2DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7A192BC21BA26750097F2DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7A192BE21BA26750097F2DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A192BF21BA26750097F2DA /* __ComputeShader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = __ComputeShader.entitlements; sourceTree = "<group>"; };
+		F7A192C421BA26750097F2DA /* 2-ComputeShaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-ComputeShaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A192CF21BA26750097F2DA /* 2-ComputeShaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "2-ComputeShaderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A192E121BA26A60097F2DA /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		F7A192E321BA26B00097F2DA /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		F7A192E521BA26BF0097F2DA /* MonteCarlo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarlo.swift; sourceTree = "<group>"; };
+		F7A192E721BA26CE0097F2DA /* Mandelbrot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mandelbrot.swift; sourceTree = "<group>"; };
+		F7A192E921BA27380097F2DA /* Computer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Computer.swift; sourceTree = "<group>"; };
+		F7A192ED21BA2FBA0097F2DA /* loki.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = loki.metal; sourceTree = "<group>"; };
+		F7A192EF21BA2FD50097F2DA /* loki_header.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = loki_header.metal; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7A192AF21BA26750097F2DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A192C121BA26750097F2DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A192CC21BA26750097F2DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7A192A921BA26750097F2DA = {
+			isa = PBXGroup;
+			children = (
+				F7A192B421BA26750097F2DA /* 2-ComputeShader */,
+				F7A192B321BA26750097F2DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7A192B321BA26750097F2DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7A192B221BA26750097F2DA /* 2-ComputeShader.app */,
+				F7A192C421BA26750097F2DA /* 2-ComputeShaderTests.xctest */,
+				F7A192CF21BA26750097F2DA /* 2-ComputeShaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7A192B421BA26750097F2DA /* 2-ComputeShader */ = {
+			isa = PBXGroup;
+			children = (
+				F7A192E321BA26B00097F2DA /* MetalView.swift */,
+				F7A192E121BA26A60097F2DA /* Shaders.metal */,
+				F7A192EB21BA273F0097F2DA /* Computer */,
+				F7A192EC21BA2F9E0097F2DA /* Loki */,
+				F7A192B921BA26750097F2DA /* Assets.xcassets */,
+				F7A192B521BA26750097F2DA /* AppDelegate.swift */,
+				F7A192BB21BA26750097F2DA /* Main.storyboard */,
+				F7A192BE21BA26750097F2DA /* Info.plist */,
+				F7A192BF21BA26750097F2DA /* __ComputeShader.entitlements */,
+			);
+			path = "2-ComputeShader";
+			sourceTree = "<group>";
+		};
+		F7A192EB21BA273F0097F2DA /* Computer */ = {
+			isa = PBXGroup;
+			children = (
+				F7A192E921BA27380097F2DA /* Computer.swift */,
+				F7A192E521BA26BF0097F2DA /* MonteCarlo.swift */,
+				F7A192E721BA26CE0097F2DA /* Mandelbrot.swift */,
+			);
+			path = Computer;
+			sourceTree = "<group>";
+		};
+		F7A192EC21BA2F9E0097F2DA /* Loki */ = {
+			isa = PBXGroup;
+			children = (
+				F7A192ED21BA2FBA0097F2DA /* loki.metal */,
+				F7A192EF21BA2FD50097F2DA /* loki_header.metal */,
+			);
+			path = Loki;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7A192B121BA26750097F2DA /* 2-ComputeShader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A192D821BA26750097F2DA /* Build configuration list for PBXNativeTarget "2-ComputeShader" */;
+			buildPhases = (
+				F7A192AE21BA26750097F2DA /* Sources */,
+				F7A192AF21BA26750097F2DA /* Frameworks */,
+				F7A192B021BA26750097F2DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "2-ComputeShader";
+			productName = "2-ComputeShader";
+			productReference = F7A192B221BA26750097F2DA /* 2-ComputeShader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7A192C321BA26750097F2DA /* 2-ComputeShaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A192DB21BA26750097F2DA /* Build configuration list for PBXNativeTarget "2-ComputeShaderTests" */;
+			buildPhases = (
+				F7A192C021BA26750097F2DA /* Sources */,
+				F7A192C121BA26750097F2DA /* Frameworks */,
+				F7A192C221BA26750097F2DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A192C621BA26750097F2DA /* PBXTargetDependency */,
+			);
+			name = "2-ComputeShaderTests";
+			productName = "2-ComputeShaderTests";
+			productReference = F7A192C421BA26750097F2DA /* 2-ComputeShaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F7A192CE21BA26750097F2DA /* 2-ComputeShaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A192DE21BA26750097F2DA /* Build configuration list for PBXNativeTarget "2-ComputeShaderUITests" */;
+			buildPhases = (
+				F7A192CB21BA26750097F2DA /* Sources */,
+				F7A192CC21BA26750097F2DA /* Frameworks */,
+				F7A192CD21BA26750097F2DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A192D121BA26750097F2DA /* PBXTargetDependency */,
+			);
+			name = "2-ComputeShaderUITests";
+			productName = "2-ComputeShaderUITests";
+			productReference = F7A192CF21BA26750097F2DA /* 2-ComputeShaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7A192AA21BA26750097F2DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Riku Takano";
+				TargetAttributes = {
+					F7A192B121BA26750097F2DA = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F7A192C321BA26750097F2DA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F7A192B121BA26750097F2DA;
+					};
+					F7A192CE21BA26750097F2DA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F7A192B121BA26750097F2DA;
+					};
+				};
+			};
+			buildConfigurationList = F7A192AD21BA26750097F2DA /* Build configuration list for PBXProject "2-ComputeShader" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7A192A921BA26750097F2DA;
+			productRefGroup = F7A192B321BA26750097F2DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7A192B121BA26750097F2DA /* 2-ComputeShader */,
+				F7A192C321BA26750097F2DA /* 2-ComputeShaderTests */,
+				F7A192CE21BA26750097F2DA /* 2-ComputeShaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7A192B021BA26750097F2DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A192BA21BA26750097F2DA /* Assets.xcassets in Resources */,
+				F7A192BD21BA26750097F2DA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A192C221BA26750097F2DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A192CD21BA26750097F2DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7A192AE21BA26750097F2DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A192E421BA26B00097F2DA /* MetalView.swift in Sources */,
+				F7A192F021BA2FD50097F2DA /* loki_header.metal in Sources */,
+				F7A192E221BA26A60097F2DA /* Shaders.metal in Sources */,
+				F7A192EA21BA27380097F2DA /* Computer.swift in Sources */,
+				F7A192E621BA26BF0097F2DA /* MonteCarlo.swift in Sources */,
+				F7A192B621BA26750097F2DA /* AppDelegate.swift in Sources */,
+				F7A192E821BA26CE0097F2DA /* Mandelbrot.swift in Sources */,
+				F7A192EE21BA2FBA0097F2DA /* loki.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A192C021BA26750097F2DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A192CB21BA26750097F2DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7A192C621BA26750097F2DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A192B121BA26750097F2DA /* 2-ComputeShader */;
+			targetProxy = F7A192C521BA26750097F2DA /* PBXContainerItemProxy */;
+		};
+		F7A192D121BA26750097F2DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A192B121BA26750097F2DA /* 2-ComputeShader */;
+			targetProxy = F7A192D021BA26750097F2DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7A192BB21BA26750097F2DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7A192BC21BA26750097F2DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7A192D621BA26750097F2DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7A192D721BA26750097F2DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F7A192D921BA26750097F2DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "2-ComputeShader/__ComputeShader.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "2-ComputeShader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--ComputeShader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		F7A192DA21BA26750097F2DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "2-ComputeShader/__ComputeShader.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "2-ComputeShader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--ComputeShader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		F7A192DC21BA26750097F2DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "2-ComputeShaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--ComputeShaderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-ComputeShader.app/Contents/MacOS/2-ComputeShader";
+			};
+			name = Debug;
+		};
+		F7A192DD21BA26750097F2DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "2-ComputeShaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--ComputeShaderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2-ComputeShader.app/Contents/MacOS/2-ComputeShader";
+			};
+			name = Release;
+		};
+		F7A192DF21BA26750097F2DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "2-ComputeShaderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--ComputeShaderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "2-ComputeShader";
+			};
+			name = Debug;
+		};
+		F7A192E021BA26750097F2DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "2-ComputeShaderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--ComputeShaderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "2-ComputeShader";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7A192AD21BA26750097F2DA /* Build configuration list for PBXProject "2-ComputeShader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A192D621BA26750097F2DA /* Debug */,
+				F7A192D721BA26750097F2DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A192D821BA26750097F2DA /* Build configuration list for PBXNativeTarget "2-ComputeShader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A192D921BA26750097F2DA /* Debug */,
+				F7A192DA21BA26750097F2DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A192DB21BA26750097F2DA /* Build configuration list for PBXNativeTarget "2-ComputeShaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A192DC21BA26750097F2DA /* Debug */,
+				F7A192DD21BA26750097F2DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A192DE21BA26750097F2DA /* Build configuration list for PBXNativeTarget "2-ComputeShaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A192DF21BA26750097F2DA /* Debug */,
+				F7A192E021BA26750097F2DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7A192AA21BA26750097F2DA /* Project object */;
+}

@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F748988721BF7EB00095F449 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748988621BF7EB00095F449 /* AppDelegate.swift */; };
+		F748988921BF7EB00095F449 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748988821BF7EB00095F449 /* ViewController.swift */; };
+		F748988B21BF7EB10095F449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748988A21BF7EB10095F449 /* Assets.xcassets */; };
+		F748988E21BF7EB10095F449 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748988C21BF7EB10095F449 /* Main.storyboard */; };
+		F748989A21BF7EB10095F449 /* __PickAndHitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748989921BF7EB10095F449 /* __PickAndHitTests.swift */; };
+		F74898A521BF7EB10095F449 /* __PickAndHitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74898A421BF7EB10095F449 /* __PickAndHitUITests.swift */; };
+		F74898B521BF7F4B0095F449 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F74898B221BF7F4A0095F449 /* Shaders.metal */; };
+		F74898B621BF7F4B0095F449 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74898B321BF7F4A0095F449 /* Renderer.swift */; };
+		F74898B721BF7F4B0095F449 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74898B421BF7F4B0095F449 /* MetalView.swift */; };
+		F74898B921BF7F580095F449 /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74898B821BF7F580095F449 /* ViewControllerDelegate.swift */; };
+		F74898BB21BF82A00095F449 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74898BA21BF82A00095F449 /* Picker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F748989621BF7EB10095F449 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F748987B21BF7EB00095F449 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F748988221BF7EB00095F449;
+			remoteInfo = "6-PickAndHit";
+		};
+		F74898A121BF7EB10095F449 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F748987B21BF7EB00095F449 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F748988221BF7EB00095F449;
+			remoteInfo = "6-PickAndHit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F748988321BF7EB00095F449 /* 6-PickAndHit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6-PickAndHit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F748988621BF7EB00095F449 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F748988821BF7EB00095F449 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F748988A21BF7EB10095F449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F748988D21BF7EB10095F449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F748988F21BF7EB10095F449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F748989021BF7EB10095F449 /* __PickAndHit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = __PickAndHit.entitlements; sourceTree = "<group>"; };
+		F748989521BF7EB10095F449 /* 6-PickAndHitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "6-PickAndHitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F748989921BF7EB10095F449 /* __PickAndHitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __PickAndHitTests.swift; sourceTree = "<group>"; };
+		F748989B21BF7EB10095F449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F74898A021BF7EB10095F449 /* 6-PickAndHitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "6-PickAndHitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F74898A421BF7EB10095F449 /* __PickAndHitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __PickAndHitUITests.swift; sourceTree = "<group>"; };
+		F74898A621BF7EB10095F449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F74898B221BF7F4A0095F449 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		F74898B321BF7F4A0095F449 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		F74898B421BF7F4B0095F449 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		F74898B821BF7F580095F449 /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
+		F74898BA21BF82A00095F449 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F748988021BF7EB00095F449 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F748989221BF7EB10095F449 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F748989D21BF7EB10095F449 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F748987A21BF7EB00095F449 = {
+			isa = PBXGroup;
+			children = (
+				F748988521BF7EB00095F449 /* 6-PickAndHit */,
+				F748989821BF7EB10095F449 /* 6-PickAndHitTests */,
+				F74898A321BF7EB10095F449 /* 6-PickAndHitUITests */,
+				F748988421BF7EB00095F449 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F748988421BF7EB00095F449 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F748988321BF7EB00095F449 /* 6-PickAndHit.app */,
+				F748989521BF7EB10095F449 /* 6-PickAndHitTests.xctest */,
+				F74898A021BF7EB10095F449 /* 6-PickAndHitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F748988521BF7EB00095F449 /* 6-PickAndHit */ = {
+			isa = PBXGroup;
+			children = (
+				F74898B421BF7F4B0095F449 /* MetalView.swift */,
+				F74898B321BF7F4A0095F449 /* Renderer.swift */,
+				F74898BA21BF82A00095F449 /* Picker.swift */,
+				F74898B221BF7F4A0095F449 /* Shaders.metal */,
+				F748988821BF7EB00095F449 /* ViewController.swift */,
+				F74898B821BF7F580095F449 /* ViewControllerDelegate.swift */,
+				F748988621BF7EB00095F449 /* AppDelegate.swift */,
+				F748988A21BF7EB10095F449 /* Assets.xcassets */,
+				F748988C21BF7EB10095F449 /* Main.storyboard */,
+				F748988F21BF7EB10095F449 /* Info.plist */,
+				F748989021BF7EB10095F449 /* __PickAndHit.entitlements */,
+			);
+			path = "6-PickAndHit";
+			sourceTree = "<group>";
+		};
+		F748989821BF7EB10095F449 /* 6-PickAndHitTests */ = {
+			isa = PBXGroup;
+			children = (
+				F748989921BF7EB10095F449 /* __PickAndHitTests.swift */,
+				F748989B21BF7EB10095F449 /* Info.plist */,
+			);
+			path = "6-PickAndHitTests";
+			sourceTree = "<group>";
+		};
+		F74898A321BF7EB10095F449 /* 6-PickAndHitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F74898A421BF7EB10095F449 /* __PickAndHitUITests.swift */,
+				F74898A621BF7EB10095F449 /* Info.plist */,
+			);
+			path = "6-PickAndHitUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F748988221BF7EB00095F449 /* 6-PickAndHit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F74898A921BF7EB10095F449 /* Build configuration list for PBXNativeTarget "6-PickAndHit" */;
+			buildPhases = (
+				F748987F21BF7EB00095F449 /* Sources */,
+				F748988021BF7EB00095F449 /* Frameworks */,
+				F748988121BF7EB00095F449 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "6-PickAndHit";
+			productName = "6-PickAndHit";
+			productReference = F748988321BF7EB00095F449 /* 6-PickAndHit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F748989421BF7EB10095F449 /* 6-PickAndHitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F74898AC21BF7EB10095F449 /* Build configuration list for PBXNativeTarget "6-PickAndHitTests" */;
+			buildPhases = (
+				F748989121BF7EB10095F449 /* Sources */,
+				F748989221BF7EB10095F449 /* Frameworks */,
+				F748989321BF7EB10095F449 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F748989721BF7EB10095F449 /* PBXTargetDependency */,
+			);
+			name = "6-PickAndHitTests";
+			productName = "6-PickAndHitTests";
+			productReference = F748989521BF7EB10095F449 /* 6-PickAndHitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F748989F21BF7EB10095F449 /* 6-PickAndHitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F74898AF21BF7EB10095F449 /* Build configuration list for PBXNativeTarget "6-PickAndHitUITests" */;
+			buildPhases = (
+				F748989C21BF7EB10095F449 /* Sources */,
+				F748989D21BF7EB10095F449 /* Frameworks */,
+				F748989E21BF7EB10095F449 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F74898A221BF7EB10095F449 /* PBXTargetDependency */,
+			);
+			name = "6-PickAndHitUITests";
+			productName = "6-PickAndHitUITests";
+			productReference = F74898A021BF7EB10095F449 /* 6-PickAndHitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F748987B21BF7EB00095F449 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Riku Takano";
+				TargetAttributes = {
+					F748988221BF7EB00095F449 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F748989421BF7EB10095F449 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F748988221BF7EB00095F449;
+					};
+					F748989F21BF7EB10095F449 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F748988221BF7EB00095F449;
+					};
+				};
+			};
+			buildConfigurationList = F748987E21BF7EB00095F449 /* Build configuration list for PBXProject "6-PickAndHit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F748987A21BF7EB00095F449;
+			productRefGroup = F748988421BF7EB00095F449 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F748988221BF7EB00095F449 /* 6-PickAndHit */,
+				F748989421BF7EB10095F449 /* 6-PickAndHitTests */,
+				F748989F21BF7EB10095F449 /* 6-PickAndHitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F748988121BF7EB00095F449 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F748988B21BF7EB10095F449 /* Assets.xcassets in Resources */,
+				F748988E21BF7EB10095F449 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F748989321BF7EB10095F449 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F748989E21BF7EB10095F449 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F748987F21BF7EB00095F449 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74898B621BF7F4B0095F449 /* Renderer.swift in Sources */,
+				F74898B521BF7F4B0095F449 /* Shaders.metal in Sources */,
+				F74898BB21BF82A00095F449 /* Picker.swift in Sources */,
+				F74898B721BF7F4B0095F449 /* MetalView.swift in Sources */,
+				F748988921BF7EB00095F449 /* ViewController.swift in Sources */,
+				F748988721BF7EB00095F449 /* AppDelegate.swift in Sources */,
+				F74898B921BF7F580095F449 /* ViewControllerDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F748989121BF7EB10095F449 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F748989A21BF7EB10095F449 /* __PickAndHitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F748989C21BF7EB10095F449 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74898A521BF7EB10095F449 /* __PickAndHitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F748989721BF7EB10095F449 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F748988221BF7EB00095F449 /* 6-PickAndHit */;
+			targetProxy = F748989621BF7EB10095F449 /* PBXContainerItemProxy */;
+		};
+		F74898A221BF7EB10095F449 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F748988221BF7EB00095F449 /* 6-PickAndHit */;
+			targetProxy = F74898A121BF7EB10095F449 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F748988C21BF7EB10095F449 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F748988D21BF7EB10095F449 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F74898A721BF7EB10095F449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F74898A821BF7EB10095F449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F74898AA21BF7EB10095F449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "6-PickAndHit/__PickAndHit.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "6-PickAndHit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--PickAndHit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		F74898AB21BF7EB10095F449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "6-PickAndHit/__PickAndHit.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "6-PickAndHit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--PickAndHit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		F74898AD21BF7EB10095F449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "6-PickAndHitTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--PickAndHitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/6-PickAndHit.app/Contents/MacOS/6-PickAndHit";
+			};
+			name = Debug;
+		};
+		F74898AE21BF7EB10095F449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "6-PickAndHitTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--PickAndHitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/6-PickAndHit.app/Contents/MacOS/6-PickAndHit";
+			};
+			name = Release;
+		};
+		F74898B021BF7EB10095F449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "6-PickAndHitUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--PickAndHitUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "6-PickAndHit";
+			};
+			name = Debug;
+		};
+		F74898B121BF7EB10095F449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "6-PickAndHitUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rt-sample01.--PickAndHitUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "6-PickAndHit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F748987E21BF7EB00095F449 /* Build configuration list for PBXProject "6-PickAndHit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74898A721BF7EB10095F449 /* Debug */,
+				F74898A821BF7EB10095F449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F74898A921BF7EB10095F449 /* Build configuration list for PBXNativeTarget "6-PickAndHit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74898AA21BF7EB10095F449 /* Debug */,
+				F74898AB21BF7EB10095F449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F74898AC21BF7EB10095F449 /* Build configuration list for PBXNativeTarget "6-PickAndHitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74898AD21BF7EB10095F449 /* Debug */,
+				F74898AE21BF7EB10095F449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F74898AF21BF7EB10095F449 /* Build configuration list for PBXNativeTarget "6-PickAndHitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74898B021BF7EB10095F449 /* Debug */,
+				F74898B121BF7EB10095F449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F748987B21BF7EB00095F449 /* Project object */;
+}

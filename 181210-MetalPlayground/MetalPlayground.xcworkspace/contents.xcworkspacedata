@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:5-NodeLinkDiagram/5-NodeLinkDiagram.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:4-RenderAndCompute/4-RenderAndCompute.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:3-MetalSandbox/3-MetalSandbox.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:2-ComputeShader/2-ComputeShader.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:1-drawTriangle/1-drawTriangle.xcodeproj">
+   </FileRef>
+</Workspace>
