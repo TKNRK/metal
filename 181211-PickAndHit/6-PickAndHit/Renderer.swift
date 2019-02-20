@@ -9,31 +9,59 @@
 import Cocoa
 import MetalKit
 
-// 頂点が持つ構造
-struct Vertex {
-    var position: float3
-    var color: float4
-}
 
 class Renderer: NSObject {
     var commandQueue: MTLCommandQueue!
     var renderPipelineState: MTLRenderPipelineState!
+    var depthStencilState: MTLDepthStencilState!
+
+    // Picker
     var picker_program: Picker!
     var now_picking: Bool = false
+    var selected_vertex: Int16 = 100
+    
+    // Computer
+    var computer_program: Computer!
 
+    // Data of vertices
     var vertexBuffer: MTLBuffer!
-    var vertices: [Vertex] = [
-        Vertex(position: float3(0,0.5,0), color: float4(0,1,0,1)),
-        Vertex(position: float3(-0.5,-0.5,0), color: float4(0,1,0,1)),
-        Vertex(position: float3(0.5,-0.5,0), color: float4(0,1,0,1))
-    ]
+    var vertices: [Vertex]!
+    // Data to draw vertices and edges
+    var vIndexBuffer: MTLBuffer!
+    var eIndexBuffer: MTLBuffer!
+    var vIndices: [UInt16]!
+    var eIndices: [UInt16]!
+    // Data to initialize the above data
+    let pi: Float32 = 3.14 * 2
+    let N = 20
 
     init(device: MTLDevice) {
         super.init()
+        initGraph()
         createCommandQueue(device: device)
         createPipelineState(device: device)
         createBuffers(device: device)
         createPicker(device: device)
+        createComputer(device: device)
+        buildDepthStencil(device: device)
+    }
+    
+    func initGraph() {
+        vertices = [
+            Vertex(position: float3(0, 0, 0), color: float4(0, 1, 0, 1)),
+        ]
+        vIndices = [UInt16(0)]
+        eIndices = []
+        
+        var angle: Float32 = 0
+        let delta: Float32 = pi / Float32(N)
+        for i in 0..<N {
+            angle += delta
+            vertices.append(Vertex(position: float3(sin(angle) * 0.7, cos(angle) * 0.7, 0), color: float4(0, 1, 0, 1)))
+            eIndices.append(0)
+            eIndices.append(UInt16(i+1))
+            vIndices.append(UInt16(i+1))
+        }
     }
     
     func createCommandQueue(device: MTLDevice) {
@@ -60,10 +88,28 @@ class Renderer: NSObject {
         vertexBuffer = device.makeBuffer(bytes: vertices,
                                          length: MemoryLayout<Vertex>.stride * vertices.count,
                                          options: [])
+        vIndexBuffer = device.makeBuffer(bytes: vIndices,
+                                        length: MemoryLayout<UInt16>.stride * vIndices.count,
+                                        options: [])
+        eIndexBuffer = device.makeBuffer(bytes: eIndices,
+                                        length: MemoryLayout<UInt16>.stride * eIndices.count,
+                                        options: [])
     }
     
     func createPicker(device: MTLDevice) {
         picker_program = Picker(device: device)
+    }
+    
+    func createComputer(device: MTLDevice) {
+        computer_program = Computer(device: device)
+    }
+    
+    // Create DepthStencil
+    private func buildDepthStencil(device: MTLDevice) {
+        let depthStencilDescriptor = MTLDepthStencilDescriptor()
+        depthStencilDescriptor.isDepthWriteEnabled = true
+        depthStencilDescriptor.depthCompareFunction = .less
+        depthStencilState = device.makeDepthStencilState(descriptor: depthStencilDescriptor)
     }
     
     var frameSize: [Float] = [ 0.0, 0.0 ]
@@ -73,9 +119,21 @@ class Renderer: NSObject {
         picker_program.setClickedPosition(x: 0, y: 0)
     }
     
-    func pick_start(x: Float, y: Float) {
+    func mouse_down(x: Float, y: Float) {
         now_picking = true
         picker_program.setClickedPosition(x: x, y: frameSize[1] - y)
+    }
+    
+    func mouse_dragged(x: Float, y: Float) {
+        if (selected_vertex > -1) {
+            let posx = x / (frameSize[0] / 2) - 1
+            let posy = y / (frameSize[1] / 2) - 1
+            computer_program.compute(vertexBuffer: vertexBuffer, numVertices: vertices.count, pickBuffer: picker_program.pickBuffer, x: posx, y: posy)
+        }
+    }
+    
+    func mouse_up(x: Float, y: Float) {
+        print("mouse up")
     }
 }
 
@@ -84,32 +142,38 @@ extension Renderer: MTKViewDelegate {
         setFrameSize(size: view.frame.size)
     }
     
-    func pick_before(commandEncoder: MTLRenderCommandEncoder) {
-        picker_program.pick(commandEncoder: commandEncoder, vertexBuffer: vertexBuffer, numVertices: vertices.count)
-    }
-    
-    func pick_after() {
+    func try_pick(view: MTKView) {
         now_picking = false
-        picker_program.loadPicker()
+        picker_program.pick(view: view, vertexBuffer: vertexBuffer, numVertices: vertices.count)
+        selected_vertex = picker_program.loadPicker()        
     }
     
     func draw(in view: MTKView) {
-        guard let drawable = view.currentDrawable,
-            let renderPassDescriptor = view.currentRenderPassDescriptor,
-            let commandBuffer = commandQueue.makeCommandBuffer(),
-            let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
-            else {return}
+        if (now_picking) {
+            try_pick(view: view)
+        } else {
+            guard let drawable = view.currentDrawable,
+                let renderPassDescriptor = view.currentRenderPassDescriptor,
+                let commandBuffer = commandQueue.makeCommandBuffer(),
+                let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+                else {return}
 
-        if (now_picking) {pick_before(commandEncoder: commandEncoder)}
-        
-        commandEncoder.setRenderPipelineState(renderPipelineState)
-        commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        commandEncoder.drawPrimitives(type: .point, vertexStart: 0, vertexCount: vertices.count)
-        
-        commandEncoder.endEncoding()
-        commandBuffer.present(drawable)
-        commandBuffer.commit()
-        
-        if (now_picking) {pick_after()}
+            commandEncoder.setRenderPipelineState(renderPipelineState)
+            commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+            //commandEncoder.setDepthStencilState(depthStencilState)
+            commandEncoder.drawIndexedPrimitives(type: .point,
+                                                 indexCount: vIndices.count,
+                                                 indexType: .uint16,
+                                                 indexBuffer: vIndexBuffer,
+                                                 indexBufferOffset: 0)
+            commandEncoder.drawIndexedPrimitives(type: .line,
+                                                 indexCount: eIndices.count,
+                                                 indexType: .uint16,
+                                                 indexBuffer: eIndexBuffer,
+                                                 indexBufferOffset: 0)
+            commandEncoder.endEncoding()
+            commandBuffer.present(drawable)
+            commandBuffer.commit()
+        }
     }
 }

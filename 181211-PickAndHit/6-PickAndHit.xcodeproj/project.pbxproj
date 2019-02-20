@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F73C9185221522F400F68885 /* Compute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C9184221522F400F68885 /* Compute.swift */; };
+		F73C9187221535D100F68885 /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73C9186221535D100F68885 /* Structure.swift */; };
 		F748988721BF7EB00095F449 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748988621BF7EB00095F449 /* AppDelegate.swift */; };
 		F748988921BF7EB00095F449 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748988821BF7EB00095F449 /* ViewController.swift */; };
 		F748988B21BF7EB10095F449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F748988A21BF7EB10095F449 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F73C9184221522F400F68885 /* Compute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compute.swift; sourceTree = "<group>"; };
+		F73C9186221535D100F68885 /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
 		F748988321BF7EB00095F449 /* 6-PickAndHit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "6-PickAndHit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F748988621BF7EB00095F449 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F748988821BF7EB00095F449 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,8 +112,10 @@
 			children = (
 				F74898B421BF7F4B0095F449 /* MetalView.swift */,
 				F74898B321BF7F4A0095F449 /* Renderer.swift */,
+				F73C9184221522F400F68885 /* Compute.swift */,
 				F74898BA21BF82A00095F449 /* Picker.swift */,
 				F74898B221BF7F4A0095F449 /* Shaders.metal */,
+				F73C9186221535D100F68885 /* Structure.swift */,
 				F748988821BF7EB00095F449 /* ViewController.swift */,
 				F74898B821BF7F580095F449 /* ViewControllerDelegate.swift */,
 				F748988621BF7EB00095F449 /* AppDelegate.swift */,
@@ -271,9 +277,11 @@
 			files = (
 				F74898B621BF7F4B0095F449 /* Renderer.swift in Sources */,
 				F74898B521BF7F4B0095F449 /* Shaders.metal in Sources */,
+				F73C9187221535D100F68885 /* Structure.swift in Sources */,
 				F74898BB21BF82A00095F449 /* Picker.swift in Sources */,
 				F74898B721BF7F4B0095F449 /* MetalView.swift in Sources */,
 				F748988921BF7EB00095F449 /* ViewController.swift in Sources */,
+				F73C9185221522F400F68885 /* Compute.swift in Sources */,
 				F748988721BF7EB00095F449 /* AppDelegate.swift in Sources */,
 				F74898B921BF7F580095F449 /* ViewControllerDelegate.swift in Sources */,
 			);

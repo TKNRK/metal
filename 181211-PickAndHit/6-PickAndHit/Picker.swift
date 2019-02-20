@@ -14,19 +14,15 @@ class Picker: NSObject {
     var renderPipelineState: MTLRenderPipelineState!
     
     // 選択された頂点を保持するためのバッファー
-    var selectionBuffer: MTLBuffer!
-    var hitResult: [UInt] = [4]
-    var clicked: float2!
+    var pickData: [Pick]!
+    var pickBuffer: MTLBuffer!
     
     init(device: MTLDevice) {
         super.init()
-        createCommandQueue(device: device)
-        createPipelineState(device: device)
-        createBuffers(device: device)
-    }
-    
-    func createCommandQueue(device: MTLDevice) {
+        pickData = [Pick(mouse_x: 0, mouse_y: 0, pick_id: UInt16(100))]
         commandQueue = device.makeCommandQueue()
+        createPipelineState(device: device)
+        createBuffer(device: device)
     }
     
     func createPipelineState(device: MTLDevice) {
@@ -45,27 +41,40 @@ class Picker: NSObject {
         }
     }
     
-    func createBuffers(device: MTLDevice) {
-        selectionBuffer = device.makeBuffer(bytes: hitResult, length: MemoryLayout<UInt>.stride, options: [])
+    func createBuffer(device: MTLDevice) {
+        pickBuffer = device.makeBuffer(bytes: pickData,
+                                       length: MemoryLayout<Pick>.stride,
+                                       options: [])
+        pickBuffer.label = "PickBuffer"
     }
     
     func setClickedPosition(x: Float, y:Float) {
-        clicked = float2(x: x, y: y)
-        print(clicked)
+        let initPicker = [Pick(mouse_x: x, mouse_y: y, pick_id: UInt16(50))]
+        pickBuffer.contents().copyMemory(from: initPicker, byteCount: MemoryLayout<Pick>.stride)
     }
     
-    func pick(commandEncoder: MTLRenderCommandEncoder, vertexBuffer: MTLBuffer, numVertices: Int) {
+    func pick(view: MTKView, vertexBuffer: MTLBuffer, numVertices: Int) {
+        guard let drawable = view.currentDrawable,
+            let renderPassDescriptor = view.currentRenderPassDescriptor,
+            let commandBuffer = commandQueue.makeCommandBuffer(),
+            let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+            else {return}
+
         commandEncoder.setRenderPipelineState(renderPipelineState)
         
         commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         commandEncoder.setFragmentBuffer(vertexBuffer, offset: 0, index: 1)
-        commandEncoder.setFragmentBytes(&clicked, length: MemoryLayout<float2>.stride, index: 2)
-        commandEncoder.setFragmentBuffer(selectionBuffer, offset: 0, index: 3)
+        commandEncoder.setFragmentBuffer(pickBuffer, offset: 0, index: 2)
         commandEncoder.drawPrimitives(type: .point, vertexStart: 0, vertexCount: numVertices)
+        commandEncoder.endEncoding()
+        commandBuffer.present(drawable)
+        commandBuffer.commit()
     }
     
-    func loadPicker() {
-        let result = selectionBuffer.contents().load(as: UInt.self)
-        print(String(format: "selectedID: %d", result))
+    func loadPicker() -> (Int16) {
+        let result = pickBuffer.contents().load(as: Pick.self)
+        print(result)
+        print(String(format: "selectedID: %d", result.pick_id))
+        return Int16(result.pick_id)
     }
 }
