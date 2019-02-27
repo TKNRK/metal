@@ -9,7 +9,7 @@
 import Cocoa
 
 
-private func gram_schmidt(e1: Array<Float>, e2: Array<Float>) -> Array<Float> {
+func gram_schmidt(e1: Array<Float>, e2: Array<Float>) -> Array<Float> {
     let E1 = normal(vec: e1)
     let mag = inner_product(vec1: E1, vec2: e2)
     let e2_mid = E1.map {mag * $0}
@@ -18,14 +18,14 @@ private func gram_schmidt(e1: Array<Float>, e2: Array<Float>) -> Array<Float> {
 }
 
 
-private func normal(vec: Array<Float>) -> Array<Float> {
+func normal(vec: Array<Float>) -> Array<Float> {
     let vec_norm = sqrt(vec.map{$0 * $0}.reduce(0){$0 + $1})
     let Vec = vec.map{ $0 / vec_norm }
     return Vec
 }
 
 
-private func inner_product(vec1: Array<Float>, vec2: Array<Float>) -> Float {
+func inner_product(vec1: Array<Float>, vec2: Array<Float>) -> Float {
     if vec1.count != vec2.count { return 0 }
     return zip(vec1, vec2).map { $0 * $1 }.reduce(0) { $0 + $1 }
 }

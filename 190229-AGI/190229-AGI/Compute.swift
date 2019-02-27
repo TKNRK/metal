@@ -17,8 +17,8 @@ class Computer: NSObject {
     
     init(device: MTLDevice) {
         super.init()
-//        createCommandQueue(device: device)
-//        createComputePipeline(device: device)
+        createCommandQueue(device: device)
+        createComputePipeline(device: device)
     }
     
     private func createCommandQueue(device: MTLDevice) {
@@ -39,7 +39,8 @@ class Computer: NSObject {
         timer += 0.1
     }
     
-    func compute(vertexBuffer: MTLBuffer, numVertices: Int) {
+
+    func compute(N: Int, h_dim: Int, vertexBuffer: MTLBuffer, LhdBuffer: MTLBuffer, projBuffer: MTLBuffer) {
         
         guard let computeCommandBuffer = commandQueue.makeCommandBuffer(),
             let computeCommandEncoder = computeCommandBuffer.makeComputeCommandEncoder()
@@ -48,12 +49,18 @@ class Computer: NSObject {
         computeCommandEncoder.setComputePipelineState(computePipelineState)
         let width = 8
         let threadsPerGroup = MTLSize(width: width, height: 1, depth: 1)
-        let numThreadgroups = MTLSize(width: (numVertices + width - 1) / width, height: 1, depth: 1)
+        let numThreadgroups = MTLSize(width: (N + width - 1) / width, height: 1, depth: 1)
         
         update()
         // computeCommandEncoder.setBytes(&timer, length: MemoryLayout<Float>.stride, index: 0)
         computeCommandEncoder.setBuffer(vertexBuffer, offset: 0, index: 0)
-        
+        computeCommandEncoder.setBuffer(LhdBuffer, offset: 0, index: 1)
+        computeCommandEncoder.setBuffer(projBuffer, offset: 0, index: 2)
+        var N = N
+        var h_dim = h_dim
+        computeCommandEncoder.setBytes(&N, length: MemoryLayout<Int>.stride, index: 3)
+        computeCommandEncoder.setBytes(&h_dim, length: MemoryLayout<Int>.stride, index: 4)
+
         computeCommandEncoder.dispatchThreadgroups(numThreadgroups, threadsPerThreadgroup: threadsPerGroup)
         
         computeCommandEncoder.endEncoding()

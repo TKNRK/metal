@@ -10,11 +10,12 @@ import Cocoa
 
 
 func initAGI(dataset: String) -> AGI_static {
-    let layoutHD_npy = loadData(fileName: dataset + "layout/layout_hd")
+    let layoutHD_npy = loadData(fileName: dataset + "/layout/layout_hd")
     let N = layoutHD_npy.0[0]
     let h_dim = layoutHD_npy.0[1]
     let layoutHD = layoutHD_npy.1
-    let projection = loadData(fileName: dataset + "layout/eigenvalues").1
+    let eigenvalues = loadData(fileName: dataset + "/layout/eigenvalues").1
+    let projection = gen_projection(eigen_values: eigenvalues)
     let agi = AGI_static(N: N, h_dim: h_dim, layoutHD: layoutHD, projection: projection)
     return agi
 }
@@ -37,7 +38,7 @@ private func loadData(fileName: String) -> (Array<Int>, Array<Float>) {
 }
 
 
-private func gen_projection(eigen_values: Array<Float>, h_dim: Int) -> Array<Float> {
+private func gen_projection(eigen_values: Array<Float>) -> Array<Float> {
     var e1 = Array<Float>(repeating: 0, count: eigen_values.count)
     var e2 = Array<Float>(repeating: 0, count: eigen_values.count)
     // generate the initial projection vectors

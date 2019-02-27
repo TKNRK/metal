@@ -35,13 +35,21 @@ fragment float4 basic_fragment_function(VertexOut vIn [[ stage_in ]]) {
 
 
 // Computation subroutine
-//kernel void compute(constant uint &N [[ buffer(0) ]],
-//                    device VertexIn *layoutHD [[ buffer(1) ]],
-//                    device VertexIn *projection [[ buffer(2) ]],
-//                    device VertexIn *vertices [[ buffer(3) ]],
-//                    uint gid [[ thread_position_in_grid ]]) {
-//    vertices[gid].position = layoutHD[gid * N] * projection[gid];
-//}
+kernel void compute(device VertexIn *vertices [[ buffer(0) ]],
+                    device float *layout_hd [[ buffer(1) ]],
+                    device float *projection [[ buffer(2) ]],
+                    constant int &N [[ buffer(3) ]],
+                    constant int &h_dim [[ buffer(4) ]],
+                    uint gid [[ thread_position_in_grid ]]) {
+    float pos_x = 0, pos_y = 0;
+    
+    for (int i=0; i < h_dim; i++) {
+        pos_x += layout_hd[h_dim * gid + i] * projection[i];
+        pos_y += layout_hd[h_dim * gid + i] * projection[i + h_dim];
+    }
+    
+    vertices[gid].position = float3(pos_x * 0.3, pos_y * 0.3, 0);
+}
 
 
 

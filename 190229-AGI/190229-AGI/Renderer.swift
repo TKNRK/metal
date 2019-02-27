@@ -28,19 +28,30 @@ class Renderer: NSObject {
     // Data to draw vertices and edges
     var vIndexBuffer: MTLBuffer!
     var vIndices: [UInt16]!
-    var eIndexBuffer: MTLBuffer!
-    var eIndices: [UInt16]!
+    // var eIndexBuffer: MTLBuffer!
+    // var eIndices: [UInt16]!
 
     var N = 0
     var h_dim = 0
 
     init(device: MTLDevice) {
         super.init()
-        // initGraph()
+        let layoutHD = initGraph(dataset: "lesmis")
         createCommandQueue(device: device)
         createPipelineState(device: device)
-        createBuffers(device: device)
+        createBuffers(device: device, layoutHD: layoutHD)
         createComputer(device: device)
+        compute_initialLayout()
+    }
+    
+    func initGraph(dataset: String) -> Array<Float> {
+        let agi = initAGI(dataset: dataset)
+        N = agi.N
+        h_dim = agi.h_dim
+        projection = agi.projection
+        vertices = Array<Vertex>(repeating: Vertex(position: float3(0,0,0), color: float4(1, 1, 1, 1)), count: N)
+        vIndices = Array(0..<N).map { UInt16($0) }
+        return agi.layoutHD
     }
     
     func createCommandQueue(device: MTLDevice) {
@@ -63,49 +74,11 @@ class Renderer: NSObject {
         }
     }
     
-    func createBuffers(device: MTLDevice) {
-        // load layout HD
-        let fileName = "lesmis/layout/layout_hd"
-        guard let filePath = Bundle.main.url(forResource: fileName, withExtension: "npy") else {
-            fatalError("Failed to open " + fileName)
-        }
-        do {
-            let hd_contents = try Npy(contentsOf: filePath)
-            N = hd_contents.shape[0]
-            h_dim = hd_contents.shape[1]
-            let hd_data: [Double] = hd_contents.elements()
-            print(N, h_dim, hd_data.count)
-            var layout_hd = Array<Float>(repeating: 0, count: N * h_dim)
-            for i in 0 ..< N*h_dim {
-                layout_hd[i] = Float(hd_data[i])
-            }
-            LhdBuffer = device.makeBuffer(bytes: layout_hd, length: MemoryLayout<Float>.stride * layout_hd.count, options: [])
-        } catch {}
-        
-        // load projection
-        let fileName2 = "lesmis/layout/eigenvalues"
-        guard let filePath2 = Bundle.main.url(forResource: fileName2, withExtension: "npy") else {
-            fatalError("Failed to open " + fileName2)
-        }
-        do {
-            let eValues = try Npy(contentsOf: filePath2)
-            let data: [Double] = eValues.elements()
-            print(data[0], data[1], data[2], data.count)
-            let OFF_X = 0, OFF_Y = N, OFF_Z = 2*N
-            var vertices = Array<Vertex>(repeating: Vertex(position: float3(0, 0, 0), color: float4(0, 1, 0, 1)), count: N)
-            for i in 0 ..< N {
-                let x = Float(data[OFF_X + i]), y = Float(data[OFF_Y + i]), z = Float(data[OFF_Z + i])
-                vertices[i] = Vertex(position: float3(x, y, z), color: float4(0, 1, 0, 1))
-            }
-            vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count, options: [])
-        } catch {}
-        
-        // draw indices
-        vIndices = []
-        for i in 0..<N { vIndices.append(UInt16(i)) }
-        vIndexBuffer = device.makeBuffer(bytes: vIndices,
-                                         length: MemoryLayout<UInt16>.stride * vIndices.count,
-                                         options: [])
+    func createBuffers(device: MTLDevice, layoutHD: Array<Float>) {
+        LhdBuffer = device.makeBuffer(bytes: layoutHD, length: MemoryLayout<Float>.stride * N * h_dim, options: [])
+        projBuffer = device.makeBuffer(bytes: projection, length: MemoryLayout<Float>.stride * h_dim * 2, options: [])
+        vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<Float>.stride * N, options: [])
+        vIndexBuffer = device.makeBuffer(bytes: vIndices, length: MemoryLayout<UInt16>.stride * vIndices.count, options: [])
 //        eIndexBuffer = device.makeBuffer(bytes: eIndices,
 //                                         length: MemoryLayout<UInt16>.stride * eIndices.count,
 //                                         options: [])
@@ -113,6 +86,10 @@ class Renderer: NSObject {
     
     func createComputer(device: MTLDevice) {
         computer_program = Computer(device: device)
+    }
+    
+    func compute_initialLayout() {
+        computer_program.compute(N: N, h_dim: h_dim, vertexBuffer: vertexBuffer, LhdBuffer: LhdBuffer, projBuffer: projBuffer)
     }
     
     var frameSize: [Float] = [ 0.0, 0.0 ]
