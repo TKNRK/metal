@@ -1,0 +1,31 @@
+{
+    "attributes": [
+        "id",
+        "label"
+    ],
+    "dim_hd": [
+        77,
+        57
+    ],
+    "force": true,
+    "graph_size": [
+        77,
+        254
+    ],
+    "name": "lesmis",
+    "centrality": {
+        "v": [
+            "betweenness",
+            "closeness",
+            "clustering",
+            "degree",
+            "eigenvector",
+            "hits_hub",
+            "pagerank"
+        ],
+        "e": [
+            "betweenness"
+        ]
+    },
+    "root": "/Users/takano/google/SocialViewPointFinder/optdrags/storage/dataset"
+}

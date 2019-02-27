@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F713771122266A060051ADAE /* AGI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F713771022266A060051ADAE /* AGI.swift */; };
+		F71377132226815E0051ADAE /* ArrayOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71377122226815E0051ADAE /* ArrayOperations.swift */; };
 		F79A7993221D1C70005A655D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A7992221D1C70005A655D /* AppDelegate.swift */; };
 		F79A7995221D1C70005A655D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A7994221D1C70005A655D /* ViewController.swift */; };
 		F79A7997221D1C71005A655D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79A7996221D1C71005A655D /* Assets.xcassets */; };
@@ -18,6 +20,12 @@
 		F79A79C3221D1D29005A655D /* Compute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A79C2221D1D29005A655D /* Compute.swift */; };
 		F79A79C5221D1E38005A655D /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A79C4221D1E38005A655D /* Structures.swift */; };
 		F79A79C7221D22F2005A655D /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F79A79C6221D22F2005A655D /* Shaders.metal */; };
+		F7F3AD0E221FB8A600D43D24 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3AD0D221FB8A600D43D24 /* DataType.swift */; };
+		F7F3AD10221FBBCA00D43D24 /* NpySaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3AD0F221FBBCA00D43D24 /* NpySaver.swift */; };
+		F7F3AD12221FBBD000D43D24 /* NpyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3AD11221FBBD000D43D24 /* NpyLoader.swift */; };
+		F7F3AD14221FBBDA00D43D24 /* NpyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3AD13221FBBDA00D43D24 /* NpyHeader.swift */; };
+		F7F3AD16221FBBE000D43D24 /* Npy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3AD15221FBBE000D43D24 /* Npy.swift */; };
+		F7F3AD4A221FCA0000D43D24 /* lesmis in Resources */ = {isa = PBXBuildFile; fileRef = F7F3AD49221FCA0000D43D24 /* lesmis */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F713771022266A060051ADAE /* AGI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGI.swift; sourceTree = "<group>"; };
+		F71377122226815E0051ADAE /* ArrayOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOperations.swift; sourceTree = "<group>"; };
 		F79A798F221D1C70005A655D /* 190229-AGI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "190229-AGI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79A7992221D1C70005A655D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F79A7994221D1C70005A655D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +66,12 @@
 		F79A79C2221D1D29005A655D /* Compute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compute.swift; sourceTree = "<group>"; };
 		F79A79C4221D1E38005A655D /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 		F79A79C6221D22F2005A655D /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		F7F3AD0D221FB8A600D43D24 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		F7F3AD0F221FBBCA00D43D24 /* NpySaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NpySaver.swift; sourceTree = "<group>"; };
+		F7F3AD11221FBBD000D43D24 /* NpyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NpyLoader.swift; sourceTree = "<group>"; };
+		F7F3AD13221FBBDA00D43D24 /* NpyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NpyHeader.swift; sourceTree = "<group>"; };
+		F7F3AD15221FBBE000D43D24 /* Npy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Npy.swift; sourceTree = "<group>"; };
+		F7F3AD49221FCA0000D43D24 /* lesmis */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lesmis; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +102,8 @@
 		F79A7986221D1C70005A655D = {
 			isa = PBXGroup;
 			children = (
+				F7F3AD49221FCA0000D43D24 /* lesmis */,
+				F7F3AD0C221FB88600D43D24 /* others */,
 				F79A7991221D1C70005A655D /* 190229-AGI */,
 				F79A79A4221D1C71005A655D /* 190229-AGITests */,
 				F79A79AF221D1C71005A655D /* 190229-AGIUITests */,
@@ -106,6 +124,8 @@
 		F79A7991221D1C70005A655D /* 190229-AGI */ = {
 			isa = PBXGroup;
 			children = (
+				F713771022266A060051ADAE /* AGI.swift */,
+				F71377122226815E0051ADAE /* ArrayOperations.swift */,
 				F79A79BE221D1CA4005A655D /* MetalView.swift */,
 				F79A79C0221D1CBE005A655D /* Renderer.swift */,
 				F79A79C2221D1D29005A655D /* Compute.swift */,
@@ -137,6 +157,18 @@
 				F79A79B2221D1C71005A655D /* Info.plist */,
 			);
 			path = "190229-AGIUITests";
+			sourceTree = "<group>";
+		};
+		F7F3AD0C221FB88600D43D24 /* others */ = {
+			isa = PBXGroup;
+			children = (
+				F7F3AD0D221FB8A600D43D24 /* DataType.swift */,
+				F7F3AD0F221FBBCA00D43D24 /* NpySaver.swift */,
+				F7F3AD11221FBBD000D43D24 /* NpyLoader.swift */,
+				F7F3AD13221FBBDA00D43D24 /* NpyHeader.swift */,
+				F7F3AD15221FBBE000D43D24 /* Npy.swift */,
+			);
+			path = others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F3AD4A221FCA0000D43D24 /* lesmis in Resources */,
 				F79A7997221D1C71005A655D /* Assets.xcassets in Resources */,
 				F79A799A221D1C71005A655D /* Main.storyboard in Resources */,
 			);
@@ -273,8 +306,15 @@
 				F79A79C7221D22F2005A655D /* Shaders.metal in Sources */,
 				F79A79C5221D1E38005A655D /* Structures.swift in Sources */,
 				F79A79BF221D1CA4005A655D /* MetalView.swift in Sources */,
+				F7F3AD10221FBBCA00D43D24 /* NpySaver.swift in Sources */,
+				F7F3AD14221FBBDA00D43D24 /* NpyHeader.swift in Sources */,
 				F79A7995221D1C70005A655D /* ViewController.swift in Sources */,
+				F71377132226815E0051ADAE /* ArrayOperations.swift in Sources */,
+				F7F3AD16221FBBE000D43D24 /* Npy.swift in Sources */,
+				F7F3AD0E221FB8A600D43D24 /* DataType.swift in Sources */,
+				F713771122266A060051ADAE /* AGI.swift in Sources */,
 				F79A7993221D1C70005A655D /* AppDelegate.swift in Sources */,
+				F7F3AD12221FBBD000D43D24 /* NpyLoader.swift in Sources */,
 				F79A79C3221D1D29005A655D /* Compute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

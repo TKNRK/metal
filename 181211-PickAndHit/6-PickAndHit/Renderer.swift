@@ -145,7 +145,7 @@ extension Renderer: MTKViewDelegate {
     func try_pick(view: MTKView) {
         now_picking = false
         picker_program.pick(view: view, vertexBuffer: vertexBuffer, numVertices: vertices.count)
-        selected_vertex = picker_program.loadPicker()        
+        // selected_vertex = picker_program.loadPicker()        
     }
     
     func draw(in view: MTKView) {

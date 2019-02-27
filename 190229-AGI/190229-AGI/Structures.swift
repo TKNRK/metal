@@ -18,3 +18,11 @@ struct Vertex {
 //    var mouse_y: Float
 //    var pick_id: UInt16
 //}
+
+
+struct AGI_static {
+    var N: Int
+    var h_dim: Int
+    var layoutHD: Array<Float>
+    var projection: Array<Float>
+}

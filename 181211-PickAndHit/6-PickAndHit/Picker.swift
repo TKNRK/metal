@@ -67,6 +67,11 @@ class Picker: NSObject {
         commandEncoder.setFragmentBuffer(pickBuffer, offset: 0, index: 2)
         commandEncoder.drawPrimitives(type: .point, vertexStart: 0, vertexCount: numVertices)
         commandEncoder.endEncoding()
+        
+        commandBuffer.addCompletedHandler { cb in
+            let result = self.pickBuffer.contents().load(as: Pick.self)
+            print(result)
+        }
         commandBuffer.present(drawable)
         commandBuffer.commit()
     }

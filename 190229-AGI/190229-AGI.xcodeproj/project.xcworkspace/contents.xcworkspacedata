@@ -1,7 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:lesmis"
+      name = "lesmis">
+      <Group
+         location = "group:misc"
+         name = "misc">
+         <FileRef
+            location = "group:profile.pickle">
+         </FileRef>
+         <FileRef
+            location = "group:profile.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:centrality"
+         name = "centrality">
+         <Group
+            location = "group:v"
+            name = "v">
+            <FileRef
+               location = "group:closeness.npy">
+            </FileRef>
+            <FileRef
+               location = "group:pagerank.npy">
+            </FileRef>
+            <FileRef
+               location = "group:eigenvector.npy">
+            </FileRef>
+            <FileRef
+               location = "group:betweenness.npy">
+            </FileRef>
+            <FileRef
+               location = "group:hits_hub.npy">
+            </FileRef>
+            <FileRef
+               location = "group:degree.npy">
+            </FileRef>
+            <FileRef
+               location = "group:clustering.npy">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:e"
+            name = "e">
+            <FileRef
+               location = "group:betweenness.npy">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:layout"
+         name = "layout">
+         <FileRef
+            location = "group:eigenvalues.npy">
+         </FileRef>
+         <FileRef
+            location = "group:layout_hd.npy">
+         </FileRef>
+         <FileRef
+            location = "group:eigenvectors.npy">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:graph"
+         name = "graph">
+         <FileRef
+            location = "group:id.npy">
+         </FileRef>
+         <Group
+            location = "group:attribute"
+            name = "attribute">
+            <FileRef
+               location = "group:label.pickle">
+            </FileRef>
+            <FileRef
+               location = "group:id.pickle">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:adjacency.npz">
+         </FileRef>
+         <FileRef
+            location = "group:label.npy">
+         </FileRef>
+         <FileRef
+            location = "group:edgelist.npy">
+         </FileRef>
+         <FileRef
+            location = "group:distance.npy">
+         </FileRef>
+         <FileRef
+            location = "group:adjacency.npy">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
-      location = "self:190229-AGI.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
