@@ -1,3 +1,6 @@
+// This code is made by qoncept
+// source code is at: https://github.com/qoncept/swift-npy
+
 import Foundation
 
 public struct Npy {

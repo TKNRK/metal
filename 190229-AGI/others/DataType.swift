@@ -1,3 +1,5 @@
+// This code is made by qoncept
+// source code is at: https://github.com/qoncept/swift-npy
 
 public enum DataType: String {
     case bool = "b1"
