@@ -25,7 +25,7 @@ vertex VertexOut basic_vertex_function(const device VertexIn *vertices [[ buffer
     VertexOut vOut;
     vOut.position = float4(vertices[vertexID].position,1);
     vOut.color = vertices[vertexID].color;
-    vOut.pointsize = 20;
+    vOut.pointsize = 5;
     return vOut;
 }
 
@@ -42,12 +42,12 @@ kernel void compute(device VertexIn *vertices [[ buffer(0) ]],
                     constant int &h_dim [[ buffer(4) ]],
                     uint gid [[ thread_position_in_grid ]]) {
     float pos_x = 0, pos_y = 0;
-    
+
     for (int i=0; i < h_dim; i++) {
         pos_x += layout_hd[h_dim * gid + i] * projection[i];
         pos_y += layout_hd[h_dim * gid + i] * projection[i + h_dim];
     }
-    
+
     vertices[gid].position = float3(pos_x * 0.3, pos_y * 0.3, 0);
 }
 

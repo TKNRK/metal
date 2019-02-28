@@ -75,9 +75,9 @@ class Renderer: NSObject {
     }
     
     func createBuffers(device: MTLDevice, layoutHD: Array<Float>) {
-        LhdBuffer = device.makeBuffer(bytes: layoutHD, length: MemoryLayout<Float>.stride * N * h_dim, options: [])
-        projBuffer = device.makeBuffer(bytes: projection, length: MemoryLayout<Float>.stride * h_dim * 2, options: [])
-        vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<Float>.stride * N, options: [])
+        LhdBuffer = device.makeBuffer(bytes: layoutHD, length: MemoryLayout<Float>.stride * layoutHD.count, options: [])
+        projBuffer = device.makeBuffer(bytes: projection, length: MemoryLayout<Float>.stride * projection.count, options: [])
+        vertexBuffer = device.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count, options: [])
         vIndexBuffer = device.makeBuffer(bytes: vIndices, length: MemoryLayout<UInt16>.stride * vIndices.count, options: [])
 //        eIndexBuffer = device.makeBuffer(bytes: eIndices,
 //                                         length: MemoryLayout<UInt16>.stride * eIndices.count,
@@ -89,6 +89,7 @@ class Renderer: NSObject {
     }
     
     func compute_initialLayout() {
+        print("initial layout")
         computer_program.compute(N: N, h_dim: h_dim, vertexBuffer: vertexBuffer, LhdBuffer: LhdBuffer, projBuffer: projBuffer)
     }
     
@@ -98,10 +99,9 @@ class Renderer: NSObject {
         frameSize = [ Float(size.width), Float(size.height) ]
     }
     
-//    func mouse_down(x: Float, y: Float) {
-//        now_picking = true
-//        picker_program.setClickedPosition(x: x, y: frameSize[1] - y)
-//    }
+    func mouse_down(x: Float, y: Float) {
+        print(x,y)
+    }
 //
 //    func mouse_dragged(x: Float, y: Float) {
 //        if (selected_vertex > -1) {

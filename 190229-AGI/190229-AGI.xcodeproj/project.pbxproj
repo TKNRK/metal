@@ -26,6 +26,7 @@
 		F7F3AD14221FBBDA00D43D24 /* NpyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3AD13221FBBDA00D43D24 /* NpyHeader.swift */; };
 		F7F3AD16221FBBE000D43D24 /* Npy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3AD15221FBBE000D43D24 /* Npy.swift */; };
 		F7F3AD4A221FCA0000D43D24 /* lesmis in Resources */ = {isa = PBXBuildFile; fileRef = F7F3AD49221FCA0000D43D24 /* lesmis */; };
+		F7FCEAD82227CE7000411DF3 /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FCEAD72227CE7000411DF3 /* ViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		F7F3AD13221FBBDA00D43D24 /* NpyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NpyHeader.swift; sourceTree = "<group>"; };
 		F7F3AD15221FBBE000D43D24 /* Npy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Npy.swift; sourceTree = "<group>"; };
 		F7F3AD49221FCA0000D43D24 /* lesmis */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lesmis; sourceTree = "<group>"; };
+		F7FCEAD72227CE7000411DF3 /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +133,9 @@
 				F79A79C2221D1D29005A655D /* Compute.swift */,
 				F79A79C4221D1E38005A655D /* Structures.swift */,
 				F79A79C6221D22F2005A655D /* Shaders.metal */,
-				F79A7992221D1C70005A655D /* AppDelegate.swift */,
 				F79A7994221D1C70005A655D /* ViewController.swift */,
+				F7FCEAD72227CE7000411DF3 /* ViewControllerDelegate.swift */,
+				F79A7992221D1C70005A655D /* AppDelegate.swift */,
 				F79A7996221D1C71005A655D /* Assets.xcassets */,
 				F79A7998221D1C71005A655D /* Main.storyboard */,
 				F79A799B221D1C71005A655D /* Info.plist */,
@@ -307,6 +310,7 @@
 				F79A79C5221D1E38005A655D /* Structures.swift in Sources */,
 				F79A79BF221D1CA4005A655D /* MetalView.swift in Sources */,
 				F7F3AD10221FBBCA00D43D24 /* NpySaver.swift in Sources */,
+				F7FCEAD82227CE7000411DF3 /* ViewControllerDelegate.swift in Sources */,
 				F7F3AD14221FBBDA00D43D24 /* NpyHeader.swift in Sources */,
 				F79A7995221D1C70005A655D /* ViewController.swift in Sources */,
 				F71377132226815E0051ADAE /* ArrayOperations.swift in Sources */,

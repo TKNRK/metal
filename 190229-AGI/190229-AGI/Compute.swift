@@ -46,6 +46,8 @@ class Computer: NSObject {
             let computeCommandEncoder = computeCommandBuffer.makeComputeCommandEncoder()
             else {return}
         
+        computeCommandBuffer.label = "computeCommandBuffer"
+        
         computeCommandEncoder.setComputePipelineState(computePipelineState)
         let width = 8
         let threadsPerGroup = MTLSize(width: width, height: 1, depth: 1)
